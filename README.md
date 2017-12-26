@@ -7,7 +7,7 @@
 
 #### Statement:
 
->   folder [google pwa demo](https://github.com/googlecodelabs/your-first-pwapp/archive/master.zip) contains all code and resources for [google pwa demo](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
+>   [google_pwa_demo](https://github.com/googlecodelabs/your-first-pwapp/archive/master.zip) folder  contains all code and resources for [google pwa demo](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/)
 
 
 
