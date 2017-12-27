@@ -33,6 +33,11 @@ self.addEventListener('install', function(e) {
 
 self.addEventListener('activate', function(e) {
   console.log('[ServiceWorker] Activate');
+  /* Note: Because oninstall/onactivate could take a while to complete,
+  the service worker spec provides a waitUntil method,
+  once this is called oninstall or onactivate, it passes a promise.
+  Functional events are not dispatched to the service
+  worker until the promise is successfully resolved. */
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promise.all(keyList.map(function(key) {
