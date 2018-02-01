@@ -1,43 +1,42 @@
-var cacheName = 'xlsdPWA';
-var dataCacheName = 'xlsdPWA-v1';
-var filesToCache = [];
+var cacheName = 'merlin';
+var dataCacheName = 'merlin-v1';
+var filesToCache = [
+  	'/',
+  	'/index.html',
+  	'/app.js',
+  	'/assets/images/snow.png',
+  	'/assets/images/thunderstorm.png',
+];
 
-self.addEventListener('install', function(e) {
+self.addEventListener('install', event => {
     console.log('[SW] Install');
-    e.waitUntil(
-        caches.open(cacheName).then(function(cache){
+    event.waitUntil(
+        caches.open(cacheName).then(cache => {
             console.log('[SW] Cacheing app shell');
             return cache.addAll(filesToCache);
         })
     );
 });
 
-self.addEventListener('activate', function(e) {
+self.addEventListener('activate', event => {
     console.log('[SW] Activate');
-    caches.keys().then(function(keyList){
-        return Promise.all(keyList.map(function(key){
-            console.log('[SW] Remove old cache');
-            return caches.delete(key);
-        }
-    })):
-    return self.clients.claim();
+    //caches.keys().then(keyList => {
+    //    return Promise.all(keyList.map(key => {
+    //        console.log('[SW] Remove old cache');
+    //        return caches.delete(key);
+    //    }))
+    //});
+    //return self.clients.claim();
 });
 
-self.addEventListener('fetch', function(e) {
-  	console.log('[SW] Fetch', e.request.url);
-    var dataUrl = 'https://query.yahooapis.com/v1/public/yql';
-    if(e.request.url.indexOf(dataUrl) > -1){
-        e.respondWith(
-            caches.open(dataCacheName).then(function(cache){
-                return fetch(e.request).then(function(response){
-                    return response;
-                });
-            });
-    }else{
-        e.respondWith(
-            cache.match(e.request).then(function(response){
-                return response || fetch(e.request);
-            });
-        );
+self.addEventListener('fetch', event => {
+  	console.log('[SW] Fetch', event.request.url);
+    const url = new URL(event.request.url);
+
+    if (url.origin == location.origin && url.pathname == '/assets/images/snow.png') {
+      console.log('here');
+      event.respondWith(caches.match('/assets/images/thunderstorm.png'));
     }
 });
+
+
