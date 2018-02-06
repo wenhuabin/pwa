@@ -1,15 +1,15 @@
 (function() {
     
+    const img = new Image();
+    img.src = '/assets/images/snow.png';
+    document.body.appendChild(img);
+
     setTimeout(() => {
       const img = new Image();
-      img.src = '/assets/images/snow.png';
+      img.src = '/assets/images/thunderstorm.png';
       document.body.appendChild(img);
-    }, 3000);
-    setTimeout(() => {
-      const img = new Image();
-      img.src = '/assets/images/snow.png';
-      document.body.appendChild(img);
-    }, 6000);
+    }, 5000);
+
     if ('serviceWorker' in navigator) {
         console.log('register');
         navigator.serviceWorker
