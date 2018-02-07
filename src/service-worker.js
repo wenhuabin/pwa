@@ -48,11 +48,27 @@ self.addEventListener('fetch', event => {
 
 self.addEventListener('message', function(event){
     console.log("SW Received Message: " + event.data);
-    event.ports[0].postMessage("SW Says 'Hello back!'");
+    //event.ports[0].postMessage("SW Says 'Hello back!'");
+    sendMsgToClients('hello from the other side');
 });
 
-function sendMsgToClients(t, msg){
-    t.clients.matchAll().then(clients => {
-        clients.forEach(client => client.postMessage('hello from the other side'));
+function sendMsgToClients(msg){
+    clients.matchAll().then(clients => {
+        console.log(clients.length);
+        clients.forEach(client => send_message_to_client(client, msg));
     });
+}
+
+function send_message_to_client(client, msg){
+    var msg_chan = new MessageChannel();
+
+    msg_chan.port1.onmessage = function(event){
+        if(event.data.error){
+            console.log(event.data.error);
+        }else{
+            console.log(event.data);
+        }
+    };
+
+    client.postMessage("SW Says: '"+msg+"'", [msg_chan.port2]);
 }
