@@ -48,9 +48,7 @@ self.addEventListener('fetch', event => {
 
 self.addEventListener('message', function(event){
     console.log("SW Received Message: " + event.data);
-    console.log(event.ports);
     event.ports[0].postMessage("SW Says 'Hello back!'");
-    //sendMsgToClients(this, 'Hello back!');
 });
 
 function sendMsgToClients(t, msg){
