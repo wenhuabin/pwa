@@ -75,14 +75,15 @@ self.addEventListener('push', function(event) {
     console.log('[Service Worker] Push Received.');
     console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-    const title = 'Push Codelab';
+    const title = '鹊桥仙';
     const options = {
-      body: 'Yay it works.',
+      body: '两情若是久长时，又岂在朝朝暮暮',
       icon: 'assets/images/icon.png',
       badge: 'assets/images/badge.png'
     };
 
     event.waitUntil(self.registration.showNotification(title, options));
+    sendMsgToClients('你有新的通知');
 });
 
 self.addEventListener('notificationclick', function(event) {
@@ -91,7 +92,7 @@ self.addEventListener('notificationclick', function(event) {
     event.notification.close();
 
     event.waitUntil(
-      clients.openWindow('https://developers.google.com/web/')
+      clients.openWindow('https://wenhuabin.com')
     );
 });
 
