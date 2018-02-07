@@ -2,8 +2,10 @@
 
 ##### Schedule for this project:
 
->   1. Learn pwa by google pwa demo
->   2. Write my own pwa code
+>   1. Learn pwa by google pwa demo (done)
+>   2. Write my own pwa code (done)
+>   3. Learn push notification by google demo (done)
+>   4. Deploy push notification in my own code (on process)
 
 ###### Statement:
 
