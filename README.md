@@ -5,7 +5,7 @@
 >   1. Learn pwa by google pwa demo (done)
 >   2. Write my own pwa code (done)
 >   3. Learn push notification by google demo (done)
->   4. Deploy push notification in my own code (on process)
+>   4. Deploy push notification in my own code (to do)
 
 ###### Statement:
 
