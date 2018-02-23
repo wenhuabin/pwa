@@ -1,0 +1,26 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "Progressive Web Application",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel src/index.html -p 3010",
+    "release": "parcel build src/index.html -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenhuabin/pwa.git"
+  },
+  "keywords": [
+    "pwa",
+    "service",
+    "worker",
+    "parcel"
+  ],
+  "author": "wenhuabin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wenhuabin/pwa/issues"
+  },
+  "homepage": "https://github.com/wenhuabin/pwa#readme"
+}

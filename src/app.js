@@ -20,7 +20,8 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
     if ('serviceWorker' in navigator && 'PushManager' in window) {
         console.log('register');
         navigator.serviceWorker
-  	           .register('/service-worker.js')
+  	           //.register('./service-worker.js')
+               .register('service-worker.js', { scope: './' })
   	           .then(function(swReg) {
                     swRegistration = swReg;
                     console.log('Service Worker Registered');
@@ -79,7 +80,6 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
         })
         .catch(function(err) {
             console.log('Failed to subscribe the user: ', err);
-            updateBtn();
         });
     }
     
