@@ -6,9 +6,10 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
     let swRegistration = null;
     let isSubscribed = false;
     
-    const img = new Image();
-    img.src = '/assets/images/snow.png';
-    document.body.appendChild(img);
+    //const img = new Image();
+	//parcel can not resolove this kind of image now'
+    //img.src = './assets/images/snow.png';
+    //document.body.appendChild(img);
 
     //setTimeout(() => {
     //  const img = new Image();
