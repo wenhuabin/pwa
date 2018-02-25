@@ -4,9 +4,9 @@ var dataCacheName = 'merlin-v1';
 var filesToCache = [
   	'/',
   	'/index.html',
-  	'/app.js',
-  	'/assets/images/snow.png',
-  	'/assets/images/thunderstorm.png',
+  	//'/app.js',
+  	//'/assets/images/snow.png',
+  	//'/assets/images/thunderstorm.png',
 ];
 
 self.addEventListener('install', event => {
