@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html -p 3010",
     "release": "parcel build src/index.html -d dist",
-    "test": "node parcel.js --define process.env.NODE_ENV='production'"
+    "pstart": "NODE_ENV='development' node parcel.js", 
+    "prelease": "NODE_ENV='production' node parcel.js" 
   },
   "repository": {
     "type": "git",
