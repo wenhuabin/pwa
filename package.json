@@ -6,8 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html -p 3010",
     "release": "parcel build src/index.html -d dist",
-    "pstart": "NODE_ENV='development' node parcel.js", 
-    "prelease": "NODE_ENV='production' node parcel.js" 
+    "pstart": "NODE_ENV='development' node parcel.js",
+    "prelease": "NODE_ENV='production' node parcel.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/wenhuabin/pwa#readme",
   "dependencies": {
-    "parcel-bundler": "^1.6.2"
+    "parcel-bundler": "^1.6.2",
+    "socket.io": "^2.0.4"
   }
 }

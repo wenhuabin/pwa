@@ -1,3 +1,5 @@
+const io = require('socket.io-client');
+
 const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQbyfIeAi0ncW1Qj0FWbjd4z2yljza19xHclBQGNKbea3o';
 
 (function() {
@@ -16,6 +18,14 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
     //  img.src = '/assets/images/thunderstorm.png';
     //  document.body.appendChild(img);
     //}, 5000);
+
+
+
+	const socket = io('http://localhost:3000');
+	socket.emit('server', 'I am a new User');
+	socket.on('message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
 
     
     if ('serviceWorker' in navigator && 'PushManager' in window) {
