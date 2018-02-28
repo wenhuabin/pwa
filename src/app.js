@@ -21,7 +21,7 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
 
 
 
-	const socket = io('http://localhost:3000');
+	const socket = io('http://localhost:3000', {path: '/msg'});
 	socket.emit('server', 'I am a new User');
 	socket.on('message', function(msg){
       $('#messages').append($('<li>').text(msg));
