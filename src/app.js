@@ -21,11 +21,11 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
 
 
 
-	const socket = io('http://localhost:3000', {path: '/msg'});
-	socket.emit('server', 'I am a new User');
-	socket.on('message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-    });
+	//const socket = io('http://localhost:8010', {path: '/'});
+	//socket.emit('server', 'I am a new User');
+	//socket.on('message', function(msg){
+    //  console.log(msg);
+    //});
 
     
     if ('serviceWorker' in navigator && 'PushManager' in window) {
