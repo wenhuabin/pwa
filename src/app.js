@@ -1,4 +1,4 @@
-const io = require('socket.io-client');
+//const io = require('socket.io-client');
 
 const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQbyfIeAi0ncW1Qj0FWbjd4z2yljza19xHclBQGNKbea3o';
 

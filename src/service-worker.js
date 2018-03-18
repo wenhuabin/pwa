@@ -51,6 +51,8 @@ self.addEventListener('message', function(event){
     console.log("SW Received Message: " + event.data);
     //event.ports[0].postMessage("SW Says 'Hello back!'");
     sendMsgToClients('hello from the other side');
+    //console.log('update service worker');
+    //console.log('update service worker again');
 });
 
 
