@@ -9,6 +9,21 @@ var filesToCache = [
   	//'/assets/images/thunderstorm.png',
 ];
 
+function initWS(){
+    console.log('init websocket');
+    var ws = new WebSocket('ws://127.0.0.1:40510');
+    // event emmited when connected
+    ws.onopen = function () {
+        console.log('websocket is connected ...')
+        // sending a send event to websocket server
+        ws.send('connected')
+    }
+    // event emmited when receiving message
+    ws.onmessage = function (ev) {
+        console.log(ev);
+    }
+}
+
 self.addEventListener('install', event => {
     console.log('[SW] Install');
     event.waitUntil(
@@ -27,6 +42,7 @@ self.addEventListener('activate', event => {
             return caches.delete(key);
         }))
     });
+    //initWS();
     return self.clients.claim();
 });
 
