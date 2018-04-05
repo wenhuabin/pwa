@@ -26,6 +26,23 @@ const applicationServerPublicKey = 'BJyo2XyO3lS9sQV8LnDFCC9oZ13BX0mFGqQEzJorVJQb
 	//socket.on('message', function(msg){
     //  console.log(msg);
     //});
+    //
+
+    let start = null;
+    let element = document.getElementById('snow');
+    element.style.position = 'absolute';
+    
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      let progress = timestamp - start;
+      console.log(progress);
+      element.style.left = progress + 'px';
+      if (progress < window.innerWidth / 2) {
+        window.requestAnimationFrame(step);
+      }
+    }
+
+    window.requestAnimationFrame(step);
 
     
     if ('serviceWorker' in navigator && 'PushManager' in window) {
